@@ -1,15 +1,12 @@
 package com.householdSubscription.books;
 
+/** 
+ * 
+ * This Interface is used to implement different kind newspaper subscription , right now one newspaper.
+ * 
+ * */
+
 public interface Newspaper {
 	
-	public double newspaper(String paperA);
-	
-	public void newspaper(String paperA,String paperB);
-	
-	public void newspaper(String paperA,String paperB,String paperC );
-	
-	public void newspaper(String paperA,String paperB,String paperC, String paperD );
-	
-	public void newspaper(String paperA,String paperB,String paperC, String paperD,String paperE );
-
+	public double newspaper(String paperA) throws Exception;
 }

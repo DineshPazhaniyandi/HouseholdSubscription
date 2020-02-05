@@ -3,7 +3,7 @@ package com.householdSubscription.data;
 
 /** 
  * 
- * This class is data layer which stores data and shares needed data methods.
+ * This class is data layer which stores data and shares needed data to methods.
  * 
  * */
 public class SubscriptionData {
@@ -34,6 +34,24 @@ public class SubscriptionData {
 	private double htWeekdayPrice = 2;
 	private double htSaturdayPrice = 4;
 	private double htSundayPrice = 4;
+	
+	 
+	private String startDate = "01-02-2020";
+	private String endDate = "29-02-2020";
+	
+	
+	public String getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 	
 	
 	

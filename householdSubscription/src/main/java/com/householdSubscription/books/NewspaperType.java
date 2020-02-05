@@ -1,36 +1,51 @@
 package com.householdSubscription.books;
 
+import com.houseCalender.CalenderForBilling;
 import com.householdSubscription.data.SubscriptionData;
+
+
+/** 
+ * 
+ * This class implements Interface methods from Newspaper to define the logic. 
+ * 
+ * */
 
 public class NewspaperType implements Newspaper {
 	
 	SubscriptionData data = new SubscriptionData();
 	double monthlyPrice;
-	public double newspaper(String paperA) {
+	
+	
+	/** 
+	 * 
+	 * This method validate type of newspaper and its price, then it return the amount for month.
+	 * 
+	 * */
+	public double newspaper(String paperA) throws Exception {
 		
 		
 		
 		if (paperA.equalsIgnoreCase(data.getNewsPaperA())) {
 			
-			double monthlyPrice = data.getToiWeekdayPrice() + data.getToiSaturdayPrice() + data.getToiSundayPrice();
+			double monthlyPrice = data.getToiWeekdayPrice() * CalenderForBilling.weekdaysInMonth()  + data.getToiSaturdayPrice() * CalenderForBilling.saturdayInMonth()  + data.getToiSundayPrice() *  CalenderForBilling.sundayInMonth();
 			return monthlyPrice;	
 		}
 		
 		
 		else if(paperA.equalsIgnoreCase(data.getNewsPaperB())) {
-			double monthlyPrice = data.getHinduWeekdayPrice() + data.getHinduSaturdayPrice() + data.getHinduSundayPrice();
+			double monthlyPrice = data.getHinduWeekdayPrice() * CalenderForBilling.weekdaysInMonth() + data.getHinduSaturdayPrice() * CalenderForBilling.saturdayInMonth()+ data.getHinduSundayPrice() *  CalenderForBilling.sundayInMonth();
 			return monthlyPrice;
 		}
 		else if(paperA.equalsIgnoreCase(data.getNewsPaperC())) {
-			double monthlyPrice = data.getEtWeekdayPrice()+ data.getEtSaturdayPrice() + data.getEtSundayPrice();
+			double monthlyPrice = data.getEtWeekdayPrice() * CalenderForBilling.weekdaysInMonth()+ data.getEtSaturdayPrice() * CalenderForBilling.saturdayInMonth() + data.getEtSundayPrice() * CalenderForBilling.sundayInMonth();
 			return monthlyPrice;
 		}
 		else if(paperA.equalsIgnoreCase(data.getNewsPaperD())) {
-			double monthlyPrice = data.getBmWeekdayPrice()+ data.getBmSaturdayPrice() + data.getBmSundayPrice();
+			double monthlyPrice = data.getBmWeekdayPrice() * CalenderForBilling.weekdaysInMonth()+ data.getBmSaturdayPrice() * CalenderForBilling.saturdayInMonth() + data.getBmSundayPrice() * CalenderForBilling.sundayInMonth();
 			return monthlyPrice;
 		}
 		else if(paperA.equalsIgnoreCase(data.getNewsPaperE())) {
-			double monthlyPrice = data.getHtWeekdayPrice()+ data.getHtSaturdayPrice()+ data.getHtSundayPrice();
+			double monthlyPrice = data.getHtWeekdayPrice() * CalenderForBilling.weekdaysInMonth() + data.getHtSaturdayPrice() * CalenderForBilling.saturdayInMonth() + data.getHtSundayPrice() * CalenderForBilling.sundayInMonth();
 			return monthlyPrice;
 		}
 		else {
@@ -41,22 +56,4 @@ public class NewspaperType implements Newspaper {
 	
 	}
 	
-	public void newspaper(String paperA,String paperB) {
-		
-		
-		
-	}
-	
-	public void newspaper(String paperA,String paperB,String paperC ) {
-		
-	}
-	
-	public void newspaper(String paperA,String paperB,String paperC, String paperD ) {
-		
-	}
-	
-	public void newspaper(String paperA,String paperB,String paperC, String paperD,String paperE ) {
-		
-	}
-
 }
